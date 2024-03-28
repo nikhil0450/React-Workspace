@@ -50,7 +50,7 @@ class Form extends Component {
           </h3>
           <h3>
             <label htmlFor="comments">Comments: </label>
-            <input
+            <textarea
               type="text"
               //   value={this.state.comments}
               value={comments}
