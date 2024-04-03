@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+## React Fragments `<> </>` / `<React.Fragment>`
+### React Fragments let you group a list of children without adding extra nodes to the DOM.
+### `Table.js` , `Columns.js`  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Re-rendering 
 
-## Available Scripts
+### `Class Based Components`
+### To avoid re-rendering of the complete component when the props or state remains unchanged, we use `PureComponent` to avoid it.
 
-In the project directory, you can run:
+### `PureComp.js` , `RegComp.js` , `ParentComp.js`
 
-### `npm start`
+#
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Function Based Components`
+### To avoid re-rendering in FBC, we use `Memo` - `React.memo` similar to the PureComponent
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `MemoComp.js` , `ParentComp.js`
 
-### `npm test`
+#
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Refs
 
-### `npm run build`
+### In any component whenever the page is loaded or re-rendered we can auto focus on any particular element of the component using Refs. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`// this.inputRefs = React.createRef()`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Refs - `RefsDemo.js` 
+### CallBack Refs - `CbRefsDemo.js`
+ *  By Refs & CallBack Refs we attach `Refs` to `DOM elements`  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Forwarding Refs - `FocusInput.js` to `Input.js` - `CBC`
+### Forwarding Refs - `FRParentInput.js` to `FRInput.js` - `CBC to FBC` 
 
-### `npm run eject`
+* By Forwarding Refs we forward the refs from parent to it's children as `props` to `components DOM elements`. 
+#
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### `Trial.js` is a practice of mapping the object data in react app that I have learnt a while ago
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Portal 
+### Portal allows you to render components outside the current React tree hierarchy. `PortalDemo.js` - `{ createPortal }`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `EventBubbling` -  An event fired from inside a portal will propagate to ancestors in the containing React tree, even if those elements are not ancestors in the DOM tree. `EventBubbling.html`
 
-## Learn More
+#
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Error Boundary 
+### Error Boundary is one of the Component Lifecycle in React
+### It have two methods - 
+### `static getDerivedStateFromError(error)` & `componentDidCatch(error, info)` 
+### `Hero.js` & `ErrorBoundary.js`
